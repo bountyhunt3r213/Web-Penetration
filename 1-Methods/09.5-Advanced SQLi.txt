@@ -1,5 +1,4 @@
 Advanced SQLi
-
 USER ID: 1' AND 1=1#
 USER ID: 1' OR 1=1#
 USER ID: 1' OR 1=1;#
