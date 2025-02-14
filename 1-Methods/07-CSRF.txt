@@ -1,0 +1,22 @@
+CSRF
+CSRF Açıkları
+Cookieler düzgün bir şekilde ayarlanmadıysa kendi değerimizi değiştirerek,
+başka bir kullanıcıymışız gibi web site içerisinde gezinmeye çalışabiliriz.
+> Sayfayı incele > Storage > Cookies
+> Burpsuit > Intercept on > Inspector > Request Cookies
+
+
+Web sızma testlerinde bir çok deneme yapacagimiz için
+BurpSuite üzerinden paketleri forward etmeden önce "Send to Repeater" yapiyoruz.
+
+CSRF üzerinden Change Password yaparak istek yolluyoruz
+BurpSuite'te repeater request kisminda gösterilen şifre değiştirme linkini
+diğer kullanıcılara açtirirsak güncel şifreleri değişir mi?
+
+http://10.0.2.5/dvwa/vulnerabilities/csrf/?password_new=123&password_conf=123&Change=Change
+
+Kullanıcı şifresinin değiştirildiğini farketmemesi için yeni bir site oluşturacağız: (index1.html)
+var/www/html/index.html
+service apache2 start
+ngrok tunneling service ile kendi sunucunda yaptiğin siteyi dış dünyaya açabilirsin.
+Kullanıcı linke girdiğinde şifresi haberi olmadan değişmiş olacak.
