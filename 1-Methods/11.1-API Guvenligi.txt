@@ -43,3 +43,6 @@ To: 9999
 {
     "otp":"1872"
 }
+
+Sitede rage limit olmadigi icin Brute Force yontemiyle,
+guvenlik kodunu girmeyi basardik.
