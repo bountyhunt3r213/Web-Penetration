@@ -1,6 +1,7 @@
 vAPI Calistirma
 cd ../../var/www/html/vapi
 
+service apache2 start
 docker-compose up -d
 lsof -i :80	-> 80 portunda ne calisiyor?
 kill 40364	-> 80 portunda calisan PID'yi durdur.
