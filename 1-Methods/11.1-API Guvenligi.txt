@@ -15,14 +15,14 @@ Tüm geliştiriciler sunucu ile olan iletişimi görmek için her gün postman'i
 Burpsuite ise bir proxy aracı. Bu isteklerin arasına girmen, onları manipüle etmeni sağlıyor.
 
 
-API Flag1
+API {Flag1}
 Postman uzerinde yarattigin kullaniciyi cagirirken,
 http://{{host}}/vapi/api1/user/5
 olan sorguyu
 http://{{host}}/vapi/api1/user/1 ile degistir.
 
 
-API2 Flag2
+API2 {Flag2}
 cards.csv dosyasini api2'ye karsi calistir.
 Pitchfork attack
 {
@@ -31,12 +31,12 @@ Pitchfork attack
 }
 
 
-API3 Flag3
+API3 {Flag3}
 TheCommentApp.apk isteklerini burpsuite ile yakala
 Proxy > HTTP history > vapi/api3/comment
 
 
-API4 Flag4
+API4 {Flag4}
 Gonderilen otpye karsi Sniper attack calistir.
 From: 1000
 To: 9999
