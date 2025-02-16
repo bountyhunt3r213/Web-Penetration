@@ -15,6 +15,6 @@ IFrames
 Link sonuna /robots.txt/ ekleyerek bazi dizinlere ulaşabiliriz.
 
 
-Burpsuit aracalığıyla, örnek <iframe>
+Burpsuite aracalığıyla, örnek <iframe>
 GET /bWAPP/iframei.php?ParamUrl=robots.txt&ParamWidth=250&ParamHeight=250"></iframe><h1>hello</h1>
 tag'i kapatip kendi kodumuzu forward ettik.
