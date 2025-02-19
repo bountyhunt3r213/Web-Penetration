@@ -1,4 +1,0 @@
-Dotdotpwn
--> Purpose: Path traversal (../) saldırılarını otomatik olarak test eden bir araçtır.
-
--> Usage  : dotdotpwn -m http -h samaritermuensingen.ch/index.php?id=2 -S
