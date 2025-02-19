@@ -1,9 +1,0 @@
-BROKEN ACCESS CONTROL & IDOR
-Access Control
-/bWAPP/smgmt_admin_portal.php?admin=0 değerini Burpsuit üzerinden "1" olarak değiştirebiliriz.
-Sayfayı incele > Storage > üzerinden de aynı işlem gerçekleştirilebilir.
-
-
-IDOR Açıkları
-https://example.com/user/profile?user_id=123
-> id değerini 124 olarak girdiğimizde farklı sayfalara ulaşabiliyor muyuz?
