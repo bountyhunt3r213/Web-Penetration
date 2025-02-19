@@ -1,0 +1,39 @@
+Whois Lookup:
+Bir domain (alan adı) veya IP adresi hakkında kayıt bilgilerini gösterir.
+Sahiplik, kayıt tarihi, süresi ve iletişim bilgileri gibi detayları içerir.
+
+Links:
+https://www.whois.com/whois/
+https://whois.domaintools.com
+
+
+DNS Lookup:
+Bir alan adının hangi IP adresine yönlendiğini ve DNS kayıtlarını gösteren sorgudur.
+
+Links:
+https://mxtoolbox.com/DNSLookup.aspx
+https://www.robtex.com
+
+Bing.com > ip: 160.153.129.3
+
+
+Sitereport:
+Bir web sitesinin güvenlik, SEO, hız ve diğer analizlerini içeren rapordur.
+Ziyaretçi trafiği, site yapısı ve risk değerlendirmesi gibi bilgiler sunar.
+
+Links:
+https://sitereport.netcraft.com
+
+
+Firewall Algilama:
+Bir web sitesinin arkasında güvenlik duvarı (WAF) olup olmadığını tespit etmeye yarar.
+Web saldırılarını önleyen sistemleri belirlemeye yardımcı olur.
+
+wafwoof, Firewall olup olmadigini gosterir.
+Terminal > wafw00f atilsamancioglu.com
+
+Terminal > lbd atilsamancioglu.com
+
+
+Firewall Bypass:
+https://medium.com/@rajeevranjancom/waf-web-application-firewall-beeeb6d905c1

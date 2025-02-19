@@ -1,0 +1,49 @@
+vAPI Calistirma
+cd ../../var/www/html/vapi
+
+service apache2 start
+docker-compose up -d
+lsof -i :80	-> 80 portunda ne calisiyor?
+kill 40364	-> 80 portunda calisan PID'yi durdur.
+
+http://172.18.0.1/vapi
+
+POSTMAN
+istek atıp cevapları incelememizi saglayan bir arac
+Tüm geliştiriciler sunucu ile olan iletişimi görmek için her gün postman'i kullanır.
+
+Burpsuite ise bir proxy aracı. Bu isteklerin arasına girmen, onları manipüle etmeni sağlıyor.
+
+
+API {Flag1}
+Postman uzerinde yarattigin kullaniciyi cagirirken,
+http://{{host}}/vapi/api1/user/5
+olan sorguyu
+http://{{host}}/vapi/api1/user/1 ile degistir.
+
+
+API2 {Flag2}
+cards.csv dosyasini api2'ye karsi calistir.
+Pitchfork attack
+{
+    "email":"savanna48@ortiz.com",
+    "password":"zTyBwV/9"
+}
+
+
+API3 {Flag3}
+TheCommentApp.apk isteklerini burpsuite ile yakala
+Proxy > HTTP history > vapi/api3/comment
+
+
+API4 {Flag4}
+Gonderilen otpye karsi Sniper attack calistir.
+From: 1000
+To: 9999
+
+{
+    "otp":"1872"
+}
+
+Sitede rage limit olmadigi icin Brute Force yontemiyle,
+guvenlik kodunu girmeyi basardik.

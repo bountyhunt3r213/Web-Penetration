@@ -1,0 +1,11 @@
+BRUTE FORCE
+Bu sefer DVWAda yanlis girdiğimiz kullanıcı adı ve şifre paketlerini "Send to Intruder" yapiyoruz
+Intruder içerisinde test edeceğimiz parametrenin değerini seçip "Add"i seçiyoruz.
+Payloads içinden ayar yaparak saldırıya başlayabiliriz.
+
+Lenght uzunluğu farklı olan payload doğru şifre olacaktır.
+
+Ayni saldiriyi şifreleri değil de kullanıcı adlarını bulmak için de gerçekleştirebiliriz:
+Cluster bomb attack:
+Payload position 1 içerisine username listini,
+Payload position 2 içerisine password listini ekliyoruz.

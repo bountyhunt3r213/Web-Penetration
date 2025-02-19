@@ -1,0 +1,8 @@
+Reflected XSS Açıkları
+Github üzerindeki payloadları hedef website üzerinde calistirmayi deneyebiliriz. bkz:
+https://github.com/xsuperbug/payloads/blob/master/XSS%20-2
+https://github.com/pgaijin66/XSS-Payloads/blob/master/payload/payload.txt
+
+
+Reflected AJAX XSS
+<img src=a onerror=alert("hacked")>

@@ -1,0 +1,3 @@
+ExifTool
+Purpose: Herhangi bir fotografin konum bilgisini gosterir
+Usage  : exiftool hiking.png

