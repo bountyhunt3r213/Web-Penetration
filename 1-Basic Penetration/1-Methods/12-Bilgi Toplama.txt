@@ -7,6 +7,13 @@ https://www.whois.com/whois/
 https://whois.domaintools.com
 
 
+
+WAYBACK URLS
+purpose: Bu komut, x alan adına ait Wayback Machine üzerindeki tüm URL'leri getirir.
+usage  : echo "example.com" | waybackurls
+
+
+
 DNS Lookup:
 Bir alan adının hangi IP adresine yönlendiğini ve DNS kayıtlarını gösteren sorgudur.
 
@@ -17,12 +24,14 @@ https://www.robtex.com
 Bing.com > ip: 160.153.129.3
 
 
+
 Sitereport:
 Bir web sitesinin güvenlik, SEO, hız ve diğer analizlerini içeren rapordur.
 Ziyaretçi trafiği, site yapısı ve risk değerlendirmesi gibi bilgiler sunar.
 
 Links:
 https://sitereport.netcraft.com
+
 
 
 Firewall Algilama:
@@ -33,6 +42,7 @@ wafwoof, Firewall olup olmadigini gosterir.
 Terminal > wafw00f atilsamancioglu.com
 
 Terminal > lbd atilsamancioglu.com
+
 
 
 Firewall Bypass:
