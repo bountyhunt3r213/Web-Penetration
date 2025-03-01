@@ -6,12 +6,31 @@ Links:
 https://www.whois.com/whois/
 https://whois.domaintools.com
 
+__________________________________________________________________________________________________________
 
-
-WAYBACK URLS
+Wayback URLs
 purpose: Bu komut, x alan adına ait Wayback Machine üzerindeki tüm URL'leri getirir.
 usage  : echo "example.com" | waybackurls
 
+crt.sh:
+Bir domainin SSL/TLS sertifikaları üzerinden, o domainin alt alan adlarını (subdomain) bulabilirsiniz.
+
+search.censys.io:
+Cihazları, IP adreslerini ve sertifikaları tarayarak güvenlik açıklarını ve cihaz bilgilerini araştırir.
+
+Subfinder
+purpose: Bir subdomain keşif aracıdır.
+usage  : subfinder -d example.com -all -o subdomains.txt
+-all parametresi tum sonuclari verir. (slow)
+-o parametresi ile ciktiyi dosyaya yazdirabilirsin.
+
+Assetfinder
+purpose: Bir domaninin alt alan adlarını(subdomain) keşfetmek.
+usage  : assetfinder example.com > assets.txt
+	 assetfinder -subs-only example.com > subdomain1.txt
+
+https://www.youtube.com/watch?v=apUc8zjTiG4 6.00
+__________________________________________________________________________________________________________
 
 
 DNS Lookup:
