@@ -15,8 +15,8 @@ find . -type f -size 1033c ! -executable -> 1033 bytelik executable olmayan dosy
 find / -type f -user bandit7 -group bandit6 -size 33c
 
 strings data.txt | grep "milliont"		 -> data.txt icerisinde milliont adli txt dosyasini getir.
-strings data.txt | uniq -c 				     -> veride kac defa tekrarlandigini gosterir.
-sort data.txt | uniq -c					       -> Gruplayarak tekrarlanma sayisini gosterir.
+strings data.txt | uniq -c 				 -> veride kac defa tekrarlandigini gosterir.
+sort data.txt | uniq -c					-> Gruplayarak tekrarlanma sayisini gosterir.
 
 mkdir /tmp/turgay	  -> Dosya olusturma
 cp data.txt /tmp/turgay	  -> Dosya kopyalama
