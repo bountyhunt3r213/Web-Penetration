@@ -1,0 +1,10 @@
+NMAP
+Purpose: Hedef sistemin ağ haritasını çıkararak, portları, servisleri,
+	 işletim sistemlerini ve potansiyel güvenlik açıklarını tarar.
+
+Usage  : nmap -sV www.example.com
+
+Bazi portlarin acik olmasi cok normaldir,
+onemli olan o portun versiyonundaki aciklik.
+
+https://highon.coffee/blog/nmap-cheat-sheet/

