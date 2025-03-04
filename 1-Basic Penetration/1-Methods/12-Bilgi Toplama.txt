@@ -11,7 +11,7 @@ ________________________________________________________________________________
 Wayback URLs
 purpose: Bu komut, x alan adına ait Wayback Machine üzerindeki tüm URL'leri getirir.
 usage  : echo "example.com" | waybackurls
-
+amass enum -d fireeye.com
 crt.sh:
 Bir domainin SSL/TLS sertifikaları üzerinden, o domainin alt alan adlarını (subdomain) bulabilirsiniz.
 
@@ -29,6 +29,8 @@ purpose: Bir domaninin alt alan adlarını(subdomain) keşfetmek.
 usage  : assetfinder example.com > assets.txt
 	 assetfinder -subs-only example.com > subdomain1.txt
 
+alternatif
+amass enum -d fireeye.com
 https://www.youtube.com/watch?v=apUc8zjTiG4 6.00
 __________________________________________________________________________________________________________
 
@@ -51,6 +53,9 @@ Ziyaretçi trafiği, site yapısı ve risk değerlendirmesi gibi bilgiler sunar.
 Links:
 https://sitereport.netcraft.com
 
+
+https://builtwith.com/
+Sitede kullanilan teknolojileri gosterir.
 
 
 Firewall Algilama:
