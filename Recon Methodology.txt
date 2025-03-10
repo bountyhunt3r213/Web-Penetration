@@ -1,6 +1,4 @@
   RECON METODOLOJISI
-kendine bir tool yaz.
-
  1-Hedef Sec
 example: *.hackerone.com
 
