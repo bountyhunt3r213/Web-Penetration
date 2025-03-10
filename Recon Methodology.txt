@@ -1,0 +1,38 @@
+  RECON METODOLOJISI
+kendine bir tool yaz.
+
+ 1-Hedef Sec
+example: *.hackerone.com
+
+
+ 2-Subdomain Enum
+500 subdomain buldu. Hangisi aktif hangisi pasif?
+ayiklama (httpx)
+
+
+ 3-Google Dork & Github
+Bulunan her subdomaine Dorking uygula.
+Githubtan yeni endpointler bakilabilir.
+
+
+ 4-Port Scanning
+8080 portunun acik oldugu 10 uygulama var.
+
+
+ 5- Fuzzing
+Bulunan 10 uygulamaya fuzzing uygula.
+test.php, example.php, *.js, ...
+.js dosyasi bulunursa -> Link Finder
+
+Link Finderda da yeni endpointler bulunursa
+Bulunan endpointlere tekrardan Fuzzing uygula.
+...Tekrarla
+
+
+ 6-Parameter Fuzzing
+Parametre, input var, mi yok mu?
+
+
+Hicbir sey bulamazsan:
+ 7-Content Discovery
+ tools: waybackurls, gau
